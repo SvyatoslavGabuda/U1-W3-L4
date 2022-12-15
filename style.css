@@ -7,9 +7,8 @@ button {
   padding: 1rem;
   margin: 1rem;
   border: 4mm ridge rgba(13, 161, 52, 0.6);
-  border-radius: 100%;
-  /* background: linear-gradient(rgb(3, 98, 1), rgb(107, 248, 82)); */
-  background-image: url(https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+  border-radius: 50% 10%;
+  background: transparent;
 
   font-weight: 900;
   font-size: 1rem;
@@ -20,20 +19,20 @@ input {
   border: 4mm ridge rgba(96, 139, 136, 0.6);
   border-radius: 10px;
   font-size: 1rem;
+  font-weight: bold;
   width: 25rem;
-  background-image: url(https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+  background: transparent;
 }
 li button {
   padding: 0.5rem;
-  border-radius: 20px;
+  border-radius: 10% 50%;
 
   border: thick double red;
   font-size: 0.75rem;
 
   margin: 0.5rem;
   color: rgb(253, 2, 2);
-  /* background: linear-gradient(rgb(57, 57, 56), rgb(178, 178, 178)); */
-  background-image: url(https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+  background: transparent;
 }
 
 .taskcompletato {
