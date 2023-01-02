@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./calendario.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Rubik+Vinyl&display=swap"
+      rel="stylesheet"
+    />
+    <title>calendario</title>
+  </head>
+  <body>
+    <header>
+      <div id="titolo">
+        <h1>
+          Oggi è il <span id="giorno">01</span> (<span id="giornoSettimana"
+            >lunedi</span
+          >) <span id="mese">mese</span> /
+          <span id="anno">anno</span>
+        </h1>
+      </div>
+      <div id="testbtn">
+        <button>Today's Test</button>
+      </div>
+
+      <div id="divclock">
+        <h2 id="clock">
+          <span id="ore"></span> : <span id="min"></span> :
+          <span id="sec"></span> : <span id="millis"></span>
+        </h2>
+      </div>
+    </header>
+    <main>
+      <div class="task">
+        <input type="text" id="nomeTask" value="Insert task here" />
+        <button onclick="inserisci(event)">clicca per inserire</button>
+        <h2>things to do:</h2>
+        <ol></ol>
+      </div>
+      <div class="container"></div>
+    </main>
+    <section id="test" class="hide">
+      <div id="testContainer">
+        <h3 id="testQuestion">testo domanda</h3>
+        <div id="answer">
+          <button class="btnAnswer">a</button>
+          <button class="btnAnswer">b</button>
+          <button class="btnAnswer">c</button>
+          <button class="btnAnswer">d</button>
+        </div>
+        <button id="nextBtn">NEXT</button>
+      </div>
+    </section>
+    <footer><p>&copy 2022 S.V.Y</p></footer>
+    <script src="./calendario.js"></script>
+    <script src="./test.js"></script>
+  </body>
+</html>

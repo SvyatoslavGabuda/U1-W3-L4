@@ -1,3 +1,6 @@
+alert(
+  "Questa non è la versione aggiornata.\n Cliccare sul pulsante 'Reindirizza' per accedere alla versione aggiornata"
+);
 const azioneBottone = function (e) {
   //   const primoBottone = document.querySelector("button");
   const input = document.querySelector("input");
@@ -20,11 +23,9 @@ const azioneBottone = function (e) {
 
   listaordinata.appendChild(elementoli);
 };
+const cambiaPagina = () => {
+  location.assign("/U1-W-christmas/calendario.html");
+};
 
-// const elmLista = document.querySelectorAll("li");
-// elmLista.onclick = (event) => {
-//   console.log(event);
-//   event.currentTarget.classList.add("taskcompletato");
-// };
-
-//onclick onkeyup onchange
+const reindirizza = document.getElementById("cambiaPag");
+reindirizza.addEventListener("click", cambiaPagina);
