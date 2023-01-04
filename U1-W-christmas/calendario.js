@@ -46,8 +46,19 @@ const time = function () {
 
   ora.innerText = hours;
   min.innerText = minutes;
-  sec.innerText = seconds;
-  millis.innerText = Math.floor(millisec / 10);
+  if (seconds < 10) {
+    sec.innerText = "0" + seconds;
+  } else {
+    sec.innerText = seconds;
+  }
+
+  // if (millisec === 0) {
+  //   millis.innerText = "00";
+  // } else if (millisec < 10) {
+  //   millis.innerText = "00" + Math.floor(millisec / 10);
+  // } else {
+  millis.innerText = Math.floor(millisec / 100);
+  // }
 
   const tempo = setTimeout(time, 1);
 };
@@ -57,7 +68,7 @@ giorno.innerText = now.getDate();
 giornoSettimana.innerText = weekDays[weekDay];
 mese.innerText = months[month];
 anno.innerText = year;
-const input = document.querySelector("input");
+const input = document.getElementById("nomeTask");
 const listaOrdinata = document.querySelector("ol");
 
 for (let i = 0; i < ultimoGiornoMese; i++) {
@@ -108,17 +119,29 @@ for (let i = 0; i < ultimoGiornoMese; i++) {
     elemLi.forEach((el) => {
       const p1 = document.createElement("p");
       p1.innerText = el.innerText;
+      p1.onclick = (event) => {
+        console.log("b", event);
+        p1.remove();
+      };
       day.appendChild(p1);
       day.classList.add("tasked");
     });
   };
 
   day.onclick = function (event) {
-    console.log(event);
-    const p = document.createElement("p");
-    p.innerText = input.value;
-    day.appendChild(p);
-    day.classList.add("tasked");
+    if (event.target === event.currentTarget) {
+      console.log("a", event);
+
+      const p = document.createElement("p");
+      p.innerText = input.value;
+      // event.stopPropagation();
+      p.onclick = (event) => {
+        console.log("b", event);
+        p.remove();
+      };
+      day.appendChild(p);
+      day.classList.add("tasked");
+    }
   };
 
   day.appendChild(innerSpan);
@@ -127,22 +150,29 @@ for (let i = 0; i < ultimoGiornoMese; i++) {
   container.appendChild(day);
 }
 input.onchange = function (event) {
-  const elementoLi = document.createElement("li");
-  const btnCancella = document.createElement("button");
+  if (input.value === "") {
+    alert("Please, insert a task");
+  } else {
+    const elementoLi = document.createElement("li");
+    const btnCancella = document.createElement("button");
 
-  elementoLi.innerText = input.value;
-  btnCancella.innerText = "Delete";
-  btnCancella.onclick = () => elementoLi.remove();
-  elementoLi.appendChild(btnCancella);
-  listaOrdinata.appendChild(elementoLi);
+    elementoLi.innerText = input.value;
+    btnCancella.innerText = "Delete";
+    btnCancella.onclick = () => elementoLi.remove();
+    elementoLi.appendChild(btnCancella);
+    listaOrdinata.appendChild(elementoLi);
+  }
 };
 const inserisci = function (e) {
   const elementoLi = document.createElement("li");
   const btnCancella = document.createElement("button");
-
-  elementoLi.innerText = input.value;
-  btnCancella.innerText = "Delete";
-  btnCancella.onclick = () => elementoLi.remove();
-  elementoLi.appendChild(btnCancella);
-  listaOrdinata.appendChild(elementoLi);
+  if (input.value === "") {
+    alert("Please, insert a task");
+  } else {
+    elementoLi.innerText = input.value;
+    btnCancella.innerText = "Delete";
+    btnCancella.onclick = () => elementoLi.remove();
+    elementoLi.appendChild(btnCancella);
+    listaOrdinata.appendChild(elementoLi);
+  }
 };

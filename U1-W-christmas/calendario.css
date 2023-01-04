@@ -25,7 +25,23 @@ header {
   margin-left: 1rem;
   display: inline-block;
   grid-column-start: 1;
+  grid-column-end: 6;
+}
+#check {
+  display: inline-block;
+  grid-column-start: 6;
   grid-column-end: 7;
+  font-size: 0.7rem;
+}
+#numeroDomande {
+  border: none;
+  font-size: 0.7rem;
+  width: 30%;
+}
+#Robot {
+  margin: 0;
+  padding: 0;
+  width: auto;
 }
 #testbtn {
   display: inline-block;
@@ -47,6 +63,8 @@ header {
   /* font-family: "Orbitron", sans-serif; */
   font-family: monospace, monospace;
   color: rgb(255, 253, 253);
+  font-size: 2.5rem;
+  margin: auto;
 }
 
 .container {
@@ -132,7 +150,7 @@ button:hover {
 }
 .day .numero {
   font-weight: 900;
-  color: rgb(0, 26, 255);
+  color: rgb(255, 255, 255);
   padding: 5px;
   border: 2px outset rgb(76, 0, 255);
 }
@@ -169,7 +187,7 @@ button:hover {
   grid-column-start: 1;
 }
 p {
-  margin: 0;
+  margin: 10px;
   padding: 0;
 }
 
@@ -213,4 +231,101 @@ footer {
   border-top: solid white 1px;
   border-bottom: solid white 1px;
   background-color: rgba(10, 226, 255, 0.1);
+}
+button:disabled {
+  background: none;
+  background-color: black;
+}
+#contatoreDomanda {
+  font-size: 2rem;
+}
+aside {
+  text-align: center;
+}
+#resultContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#resultContainer p {
+  color: white;
+  margin: 0%;
+  font-size: 3rem;
+}
+#resultContainer h4 {
+  font-size: 2rem;
+}
+#left {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  text-align: center;
+  border-radius: 100%;
+  background-color: rgba(10, 226, 255, 0.1);
+  aspect-ratio: 1/1;
+  border: 3px outset white;
+}
+
+#rigth {
+  background-color: rgba(10, 226, 255, 0.1);
+  display: grid;
+  place-items: center;
+  margin: auto;
+  text-align: center;
+  aspect-ratio: 1/1;
+  border: 3px outset white;
+
+  border-radius: 100%;
+}
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+aside h4 {
+  font-size: 4rem;
+  padding: 2rem;
+}
+aside button {
+  margin: 5rem;
+  padding: 1rem;
+  width: 50%;
+}
+#middle {
+  margin: auto;
+  height: 400px;
+  width: 400px;
+  background-color: rgba(10, 226, 255, 0.1);
+  position: relative;
+  border-radius: 25%;
+  display: grid;
+  place-items: center;
+}
+#conteinerCerchio {
+  border: 1px solid black;
+  position: relative;
+  height: 400px;
+  width: 400px;
+  background-color: orange;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+}
+#conteinerCerchio:before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background: linear-gradient(180deg, rgb(9, 62, 235), rgb(138, 164, 250));
+
+  border-radius: 100%;
+  border: 1px solid black;
+}
+#progresso {
+  color: black;
+  position: relative;
+  font-size: 100px;
 }
